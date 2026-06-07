@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScySync // Workspace Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://scybud.github.io/scybud-ui/css/modal.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">🔍 ScySync <span>// Agent Core</span></div>
+        <div id="system-indicator" class="badge status-good">System Online</div>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="metrics-grid">
+            <div class="card metric">
+                <h3>Tracked Assets</h3>
+                <p id="total-files">0</p>
+            </div>
+            <div class="card metric">
+                <h3>Storage Footprint</h3>
+                <p id="storage-size">0 KB</p>
+            </div>
+            <div class="card metric">
+                <h3>Last Sync Cycle</h3>
+                <p id="last-sync">Never</p>
+            </div>
+        </section>
+
+        <section class="card tracking-panel">
+            <h2>📁 Active Tracked Repositories</h2>
+            <div id="pipeline-list" class="pipeline-list">
+                <div class="loading-state">Awaiting stream array from Appwrite Cloud...</div>
+            </div>
+        </section>
+
+        <section class="card security-panel">
+            <h2>🚨 Administrative Security Intercepts</h2>
+            <p>Trigger a hard execution block across all local background engine runtimes instantly.</p>
+            
+            <div class="action-bar" style="margin-top: 1rem; display: flex; gap: 1rem;">
+                <button id="lock-btn" class="btn btn-danger">Trigger Isolation Lock</button>
+                <button id="view-status-btn" class="btn btn-secondary">System Diagnostic</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-container"></div>
+
+  <dialog id="scy-modal" class="modal-overlay">
+        <div class="modal-box">
+            <header class="modal-header">
+                <h3 id="modal-title">System Intercept</h3>
+                <button id="modal-close-x" class="modal-close-btn">&times;</button>
+            </header>
+            <div id="modal-body" class="modal-content">
+                </div>
+        </div>
+    </dialog>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
